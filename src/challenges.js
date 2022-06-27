@@ -29,8 +29,8 @@ let retorno = arrayString[arrayString.length - 1] + ", " + arrayString[0];
 concatName(['captain', 'my', 'captain']);
 
 // Desafio 5
-function footballPoints() {
-  // seu código aqui
+function footballPoints(wins, ties) {
+  return wins * 3 + ties
 }
 
 // Desafio 6
