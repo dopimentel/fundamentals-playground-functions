@@ -21,9 +21,12 @@ let arrayPalavras = frase.split (" ")
 }
 
 // Desafio 4
-function concatName() {
-  // seu código aqui
+function concatName(arrayString) {
+let retorno = arrayString[arrayString.length - 1] + ", " + arrayString[0];
+ 
+ return retorno;
 }
+concatName(['captain', 'my', 'captain']);
 
 // Desafio 5
 function footballPoints() {
