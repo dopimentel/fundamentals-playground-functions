@@ -46,7 +46,6 @@ function highestCount(arrayMaior) {
 
 // Desafio 7
 function catAndMouse(mouse, cat1, cat2) {
-  let resultado = '';
   let distancia1 = mouse - cat1;
   let distancia2 = mouse - cat2;
 
@@ -60,9 +59,23 @@ function catAndMouse(mouse, cat1, cat2) {
 }
 
 // Desafio 8
-function fizzBuzz() {
-  // seu código aqui
+function fizzBuzz(numeros) {
+  let resultado = [];
+  for (let num of numeros) {
+    if (num % 3 === 0 && num %5 === 0) {
+    resultado.push('fizzBuzz');
+  } else if (num % 3 === 0 && num %5 !== 0) {
+    resultado.push('fizz');
+  } else if (num % 3 !== 0 && num %5 === 0) {
+    resultado.push('buzz');
+  } else if (num % 3 !== 0 && num %5 !== 0) {
+    resultado.push('bug!');
+  }
+  }
+
+  return resultado
 }
+
 
 // Desafio 9
 function encode() {
