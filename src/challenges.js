@@ -78,9 +78,34 @@ function fizzBuzz(numeros) {
 
 
 // Desafio 9
-function encode() {
+function encode(frase) {
   // seu código aqui
+  let vogais = ['a', 'e', 'i', 'o', 'u'];
+  let numeros = [1, 2, 3, 4, 5];
+  let resultado = [];
+  for (let index = 0; index < frase.length; index +=1) {
+    frase[index]
+
+    for (let index2 = 0; index2 < vogais.length; index2 +=1) {
+
+      if (frase[index] === vogais[index2]) {
+
+        resultado.push(numeros[index2]);
+    }      
+    }
+    resultado.push(frase[index]);
+  } 
+  console.log(resultado);
 }
+
+  
+  encode('hi there!');
+  
+  
+
+
+
+
 function decode() {
   // seu código aqui
 }
