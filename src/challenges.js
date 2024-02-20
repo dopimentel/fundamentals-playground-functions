@@ -2,9 +2,8 @@
 function compareTrue(parametro1, parametro2) {
   if (parametro1 === true && parametro2 === true) {
     return true;
-  } else {
-    return false;
   }
+  return false;
 }
 // Desafio 2
 function calcArea(base, height) {
@@ -20,7 +19,7 @@ function splitSentence(frase) {
 
 // Desafio 4
 function concatName(arrayString) {
-  let retorno = arrayString[arrayString.length - 1] + ', ' + arrayString[0];
+  let retorno = `${arrayString[arrayString.length - 1]}, ${arrayString[0]}`;
 
   return retorno;
 }
@@ -51,68 +50,71 @@ function catAndMouse(mouse, cat1, cat2) {
 
   if (Math.abs(distancia1) > Math.abs(distancia2)) {
     return 'cat2';
-  } else if (Math.abs(distancia1) < Math.abs(distancia2)) {
+  } if (Math.abs(distancia1) < Math.abs(distancia2)) {
     return 'cat1';
-  } else {
-    return 'os gatos trombam e o rato foge';
   }
+  return 'os gatos trombam e o rato foge';
 }
 
 // Desafio 8
-function fizzBuzz(numeros) {
-  let resultado = [];
-  for (let num of numeros) {
-    if (num % 3 === 0 && num %5 === 0) {
-    resultado.push('fizzBuzz');
-  } else if (num % 3 === 0 && num %5 !== 0) {
-    resultado.push('fizz');
-  } else if (num % 3 !== 0 && num %5 === 0) {
-    resultado.push('buzz');
-  } else if (num % 3 !== 0 && num %5 !== 0) {
-    resultado.push('bug!');
-  }
-  }
 
-  return resultado
+function isFizzBuzz(num) {
+  return num % 15 === 0;
 }
 
+function isFizz(num) {
+  return num % 3 === 0;
+}
+
+function isBuzz(num) {
+  return num % 5 === 0;
+}
+function fizzBuzz(numeros) {
+  return numeros.map((num) => {
+    if (isFizzBuzz(num)) {
+      return 'fizzBuzz';
+    } if (isFizz(num)) {
+      return 'fizz';
+    } if (isBuzz(num)) {
+      return 'buzz';
+    }
+    return 'bug!';
+  });
+}
 
 // Desafio 9
 function encode(frase) {
-  // seu código aqui
   let vogais = ['a', 'e', 'i', 'o', 'u'];
   let numeros = [1, 2, 3, 4, 5];
-  let resultado = [];
-  for (let index = 0; index < frase.length; index +=1) {
-    frase[index]
-
-    for (let index2 = 0; index2 < vogais.length; index2 +=1) {
-
-      if (frase[index] === vogais[index2]) {
-
-        resultado.push(numeros[index2]);
-    }      
+  const letters = frase.split('');
+  return letters.map((letter) => {
+    if (vogais.includes(letter)) {
+      return numeros[vogais.indexOf(letter)];
     }
-    resultado.push(frase[index]);
-  } 
-  console.log(resultado);
+    return letter;
+  }).join('');
 }
 
-  
-  encode('hi there!');
-  
-  
+console.log(encode('hi there!'));
 
-
-
-
-function decode() {
-  // seu código aqui
+function decode(frase) {
+  let vogais = ['a', 'e', 'i', 'o', 'u'];
+  let numeros = [1, 2, 3, 4, 5];
+  const letters = frase.split('');
+  return letters.map((letter) => {
+    if (numeros.includes(Number(letter))) {
+      return vogais[numeros.indexOf(Number(letter))];
+    }
+    return letter;
+  }).join('');
 }
 
 // Desafio 10
-function techList() {
-  // seu código aqui
+function techList(list, name) {
+  if (list.length === 0) {
+    return 'Vazio!';
+  }
+  return list.sort().map((tech) => ({ tech, name }));
 }
 
 module.exports = {
