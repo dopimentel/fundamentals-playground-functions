@@ -25,13 +25,15 @@ function generatePhoneNumber(array) {
 }
 
 // Desafio 12
-function triangleCheck() {
-  // seu código aqui
+function triangleCheck(lineA, lineB, lineC) {
+  return lineA < lineB + lineC && lineA > Math.abs(lineB - lineC);
 }
 
 // Desafio 13
-function hydrate() {
-  // seu código aqui
+function hydrate(string) {
+  const numbers = string.match(/\d+/g);
+  const sum = numbers.reduce((acc, number) => acc + parseInt(number, 10), 0);
+  return sum > 1 ? `${sum} copos de água` : `${sum} copo de água`;
 }
 
 module.exports = {
